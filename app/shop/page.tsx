@@ -41,7 +41,9 @@ export default async function ProductPage(){
             const difference = product.price - product.discountedPrice;
             const discountedPercentage = Math.round((difference / product.price) * 100);
             return(
+            
             <li key={product.id} className="m-2">
+              <Link href={`/shop/${product.id}`}>
               <h2>{product.title}</h2>
               <div className="relative">
               <img src={product.image.url}
@@ -53,7 +55,9 @@ export default async function ProductPage(){
               {onSale ? (<div><p>{product.discountedPrice}</p> <p className="line-through">{product.price}</p></div>):
               <div><p>{product.price}</p></div>}
               </div>
+              </Link>
             </li>
+            
             )})}
         </ul>
       ) : (<ShowError />)}
