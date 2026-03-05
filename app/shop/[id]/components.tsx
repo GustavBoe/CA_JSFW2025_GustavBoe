@@ -1,0 +1,1 @@
+//export function singleProductLayout({title:string, image:string, description:string,  })

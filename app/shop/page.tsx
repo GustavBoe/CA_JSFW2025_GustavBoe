@@ -2,25 +2,8 @@
 import React from "react";
 import Link from 'next/link';
 import { ShowError } from "../error/page";
+import { ApiResponse } from "../interfaces";
 
-export interface Product{
-  id:string;
-  title:string;
-  description:string;
-  price:number;
-  discountedPrice:number;
-  image:{
-    url: string;
-    alt: string;
-  };
-  rating: number;
-  tags: string[];
-  reviews: string[];
-}
-export interface ApiResponse{
-  data: Product[];
-  //meta: any;
-}
 
 export default async function ProductPage(){
   const response = await fetch('https://v2.api.noroff.dev/online-shop');
