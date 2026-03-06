@@ -1,16 +1,19 @@
 import { create } from "zustand";
+import { CartStore } from "../interfaces";
 
-const useCartStore = create((set) => ({
+const useCartStore = create<CartStore>((set) => ({
   items: [],
 
   addItem: (product) =>
     set((state) => {
+      
       const existingItem = state.items.find(
-        (item) => item.productId === product.productId,
+        (item) => item.id === product.id,
       );
+
       if (existingItem) {
         const updatedItems = state.items.map((item) =>
-          item.productId === product.productId
+          item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
             : item,
         );
@@ -22,24 +25,24 @@ const useCartStore = create((set) => ({
       }
     }),
 
-  removeItem: (productId) =>
+  removeItem: (id) =>
     set((state) => {
       const updatedItems = state.items.filter(
-        (item) => item.productId !== productId,
+        (item) => item.id !== id,
       );
       return { items: updatedItems };
     }),
 
-  updatedQuantity: (productId, quantity) =>
+  updateQuantity: (id, quantity) =>
     set((state) => {
       if (quantity <= 0) {
         const updatedItems = state.items.filter(
-          (item) => item.productId !== productId,
+          (item) => item.id !== id,
         );
         return { items: updatedItems };
       } else {
         const updatedItems = state.items.map((item) =>
-          item.productId === productId ? { ...item, quantity: quantity } : item,
+          item.id === id ? { ...item, quantity: quantity } : item,
         );
         return { items: updatedItems };
       }

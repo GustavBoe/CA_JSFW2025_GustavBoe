@@ -22,6 +22,20 @@ export interface Product{
   tags: string[];
   reviews: Review[];
 }
+export interface CartItem extends Product{
+  quantity: number;
+}
+
+//Interface inspired from answer given by ChatGPT
+export interface CartStore{
+  items: CartItem[];
+
+  addItem: (product:Product) => void;
+  removeItem:(id:string)=>void;
+  updateQuantity:(id:string, quantity:number) => void;
+  clearCart:()=>void;
+}
+//
 export interface ApiResponse{
   data: Product[];
 }
