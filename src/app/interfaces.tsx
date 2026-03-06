@@ -35,6 +35,8 @@ export interface CartStore{
   updateQuantity:(id:string, quantity:number) => void;
   clearCart:()=>void;
 }
+
+
 //
 export interface ApiResponse{
   data: Product[];

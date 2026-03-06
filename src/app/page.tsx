@@ -1,9 +1,9 @@
-/** This is the page for all products, also known as the home page */
+
 
 import Link from 'next/link';
-import { ShowError } from "./error/page";
+import ShowError  from "./error/page";
 import { ApiResponse } from "./interfaces";
-import useCartStore from "./stores/cartStore";
+import useCartStore from "../../stores/cartStore";
 
 
 export default async function ProductPage(){

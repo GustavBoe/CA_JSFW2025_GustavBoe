@@ -2,8 +2,11 @@
 import React from "react";
 import Link from "next/link";
  import { SingleApiResponse } from "@/src/app/interfaces";
-import { ShowError } from "@/src/app/error/page";
+import  ShowError  from "@/src/app/error/page";
+import ProductAdder from "../../components/ProductAdder";
+
 export default async function SingleProduct({params,}: {params:Promise<{id:string}>;}){
+  
   const {id:productId} = await params;
   const response = await fetch(
     `https://v2.api.noroff.dev/online-shop/${productId}`
@@ -36,6 +39,7 @@ export default async function SingleProduct({params,}: {params:Promise<{id:strin
       
      {onSale ? (<div><p>{product.discountedPrice}</p> <p className="line-through">{product.price}</p><p>{discountedPercentage} off!</p></div>):
               <div><p>{product.price}</p></div>}
+              <ProductAdder product={product}/>
                <p>{product.tags.join(",")}</p>
       <ul>
         {product.reviews.length > 0 ?(

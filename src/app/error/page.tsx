@@ -1,5 +1,5 @@
 
-export function ShowError(){
+export default function ShowError(){
   return(<section>
     <div>
       <h1>Oops! We could not get our data!</h1>

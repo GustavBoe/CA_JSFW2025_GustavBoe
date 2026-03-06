@@ -1,5 +1,5 @@
 import React from "react";
-import useCartStore from "../stores/cartStore";
+import useCartStore from "../../../stores/cartStore";
 import Link from "next/link";
 
 

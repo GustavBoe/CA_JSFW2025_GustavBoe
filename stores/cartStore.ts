@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { CartStore } from "../interfaces";
+import { CartStore } from "../src/app/interfaces";
 
 const useCartStore = create<CartStore>((set) => ({
   items: [],
