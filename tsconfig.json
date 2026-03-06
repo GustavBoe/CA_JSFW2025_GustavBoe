@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "stores/cartStore.js"  ],
+, "src/app/stores/cartStore.js"  ],
   "exclude": ["node_modules"]
 }

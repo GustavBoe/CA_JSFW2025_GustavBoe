@@ -1,8 +1,8 @@
  // This is the page for a single product, interfacefetching and rendering 
 import React from "react";
 import Link from "next/link";
- import { SingleApiResponse } from "@/app/interfaces";
-import { ShowError } from "@/app/error/page";
+ import { SingleApiResponse } from "@/src/app/interfaces";
+import { ShowError } from "@/src/app/error/page";
 export default async function SingleProduct({params,}: {params:Promise<{id:string}>;}){
   const {id:productId} = await params;
   const response = await fetch(
