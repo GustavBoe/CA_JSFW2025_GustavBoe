@@ -1,5 +1,5 @@
 "use client"
-import useCartStore from "@/stores/cartStore";
+import useCartStore from "@/stores/CartStore";
 import { Product} from "../interfaces";
 
 interface Props{

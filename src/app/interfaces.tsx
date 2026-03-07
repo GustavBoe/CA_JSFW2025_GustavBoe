@@ -34,8 +34,14 @@ export interface CartStore{
   removeItem:(id:string)=>void;
   updateQuantity:(id:string, quantity:number) => void;
   clearCart:()=>void;
+ 
 }
 
+export interface CartSummary{
+  itemCount: number;
+  total: number;
+
+}
 
 //
 export interface ApiResponse{

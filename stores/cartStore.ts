@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { CartStore } from "../src/app/interfaces";
 
-const useCartStore = create<CartStore>((set) => ({
+const useCartStore = create<CartStore>((set, get) => ({
   items: [],
 
   addItem: (product) =>
@@ -48,6 +48,27 @@ const useCartStore = create<CartStore>((set) => ({
       }
     }),
   clearCart: () => set({ items: [] }),
+    //inspired by answer given by ChatGPT
+  cartSummary: () => {
+    const items = get().items
+
+    return items.reduce((acc,item)=>{
+
+      const activePrice = item.discountedPrice< item.price ? item.discountedPrice : item.price;
+      const total = activePrice * item.quantity;
+      
+      acc.total += total;
+      acc.itemCount += item.quantity;
+
+      return acc
+    },
+    {total: 0,
+    itemCount:0
+    })
+    }
+ 
+  
+  //
 }));
 
 export default useCartStore;

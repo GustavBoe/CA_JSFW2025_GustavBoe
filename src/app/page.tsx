@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import ShowError  from "./error/page";
 import { ApiResponse } from "./interfaces";
-import useCartStore from "../../stores/cartStore";
+
 
 
 export default async function ProductPage(){
