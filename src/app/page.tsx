@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import ShowError  from "./error/page";
 import { ApiResponse } from "./interfaces";
+import ProductSearch from './components/ProductSearch';
 
 
 
@@ -17,7 +18,9 @@ export default async function ProductPage(){
   const products = result.data;
 
   return(
+    
     <div>
+      <ProductSearch/>
       {products && products.length > 0 ? (
         <ul>
           {products.map((product)=>{

@@ -50,3 +50,12 @@ export interface ApiResponse{
 export interface SingleApiResponse{
   data: Product;
 }
+
+export interface ContactData{
+  name:string;
+  subject:string;
+  email:string;
+  message:string;
+ 
+
+}
