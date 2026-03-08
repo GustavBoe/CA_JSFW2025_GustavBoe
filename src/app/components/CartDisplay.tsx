@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import Link from "next/link";
-import useCartStore from "../../../stores/CartStore";
+import useCartStore from "@/stores/CartStore";
 import CartSummary from "./CartSummary";
 
 

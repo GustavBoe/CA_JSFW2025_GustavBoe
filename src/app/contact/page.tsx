@@ -2,7 +2,7 @@
 import {useForm} from "react-hook-form"
 import type { FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ContactFormData, ContactFormSchema } from "../schemas/ContactFormSchema";
+import { ContactFormData, ContactFormSchema } from "../../../schemas/ContactFormSchema";
 
  function ContactForm(){
  const{register,handleSubmit,formState:{errors, isSubmitting}, reset} =useForm<ContactFormData>({
