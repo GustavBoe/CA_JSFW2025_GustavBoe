@@ -1,3 +1,5 @@
+## This is supposed to be a live site, might show readme instead.
+
 ## Getting Started
 
 First, run the development server:
