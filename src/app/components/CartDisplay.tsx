@@ -40,6 +40,7 @@ function CartDisplay(){
         ))}
       </ul>
       <h3> <CartSummary/> </h3>
+     <Link href={"/checkout"}>Checkout</Link>
     </div>
   );
 }

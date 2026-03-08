@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation"; 
 import CartCounter from "./CartCounter";
-import useCartStore from "@/stores/CartStore";
+
 
 const navLinks = [
   { href: "/", label: "Shop" },
