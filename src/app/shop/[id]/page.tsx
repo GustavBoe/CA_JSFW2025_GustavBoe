@@ -32,9 +32,10 @@ export default async function SingleProduct({params,}: {params:Promise<{id:strin
 
   
   return(
-    <div>
+    <div className="max-w-lg mx-auto">
       <h1>{product.title}</h1>
-      <img src={product.image.url} alt={product.image.alt || product.title}/>
+      <img className="w-sm h-auto" src={product.image.url}
+              alt={product.image.alt || product.title}/>
       <p>{product.description}</p>
       
      {onSale ? (<div><p>{product.discountedPrice}</p> <p className="line-through">{product.price}</p><p>{discountedPercentage} off!</p></div>):

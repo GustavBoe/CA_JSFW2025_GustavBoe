@@ -1,5 +1,6 @@
-import NavigationMenu from "./components/NavigationMenu"
 import "./globals.css";
+import NavigationMenu from "./components/NavigationMenu"
+
 
 
 

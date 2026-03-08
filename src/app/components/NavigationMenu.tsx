@@ -8,14 +8,16 @@ import CartCounter from "./CartCounter";
 const navLinks = [
   { href: "/", label: "Shop" },
   {href: "/contact", label: "Contact"},
-  {href:"/cart", label: "Cart"}
+  {href:"/cart", label: `Cart`},
+
+  
 ];
 
 export default function NavigationMenu() {
   const pathname = usePathname(); 
 
   return (
-    <nav>
+    <nav className="flex flex-row items-baseline justify-evenly mt-5 mb-5">
       {navLinks.map((link) => {
         const isActive = pathname === link.href;
         return (
@@ -32,7 +34,7 @@ export default function NavigationMenu() {
           </Link>
         );
       })}
-      <span><CartCounter/></span>
+      <div><CartCounter/></div>
     </nav>
   );
 }

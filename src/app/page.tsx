@@ -1,5 +1,3 @@
-
-
 import Link from 'next/link';
 import ShowError  from "./error/page";
 import { ApiResponse } from "./interfaces";
@@ -18,22 +16,24 @@ export default async function ProductPage(){
   const products = result.data;
 
   return(
-    
+   
     <div>
       <ProductSearch/>
+    
+       
       {products && products.length > 0 ? (
-        <ul>
+        <ul className= "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product)=>{
             const onSale = product.price > product.discountedPrice;
             const difference = product.price - product.discountedPrice;
             const discountedPercentage = Math.round((difference / product.price) * 100);
             return(
             
-            <li key={product.id} className="m-2">
+            <li key={product.id}>
               <Link href={`/shop/${product.id}`}>
               <h2>{product.title}</h2>
               <div className="relative">
-              <img src={product.image.url}
+              <img className="w-full h-auto" src={product.image.url}
               alt={product.image.alt || product.title}/>
               
               {onSale && <div className="absolute top-0 right-0 bg-amber-900 text-white"> {discountedPercentage} %</div>}
@@ -50,5 +50,6 @@ export default async function ProductPage(){
         </ul>
       ) : (<ShowError />)}
     </div>
+    
   )
 };
